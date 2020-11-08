@@ -1,0 +1,9 @@
+extraction:
+  java:
+    index:
+      build_command:
+        - "export JAVA_HOME=/nfs_tools/Linux/2.4/java/jdk-11.0.2"
+        - "export PATH=$PATH:/var/jenkins_home/maven-3.6/bin"
+        - "mvn clean package -f pom.xml -B -V -e -Dfindbugs.skip -Dcheckstyle.skip\
+        \ -Dpmd.skip=true -Denforcer.skip -Dmaven.javadoc.skip -DskipTests -Dmaven.test.skip.exec\
+        \ -Dlicense.skip=true -Drat.skip=true -s /var/jenkins_home/codeql-home/settings.xml -gs /var/jenkins_home/codeql-home/settings.xml"
